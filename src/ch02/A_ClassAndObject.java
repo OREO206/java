@@ -75,6 +75,50 @@ class ExampleClass1 {
 		this.attribute2 = arg2;
 		// this.staticMethod();
 	}
+	
+	// 오버로딩: 같은 클래스 내에서 같은 이름의 메서드를 여러개 작성할 수 있도록 하는 방법
+	// 오버로딩 조건
+	// 1. 메서드 이름을 중복해서 작성하지만 매개변수의 타입 및 개수를 다르게 작성
+	// 2. 메서드의 반환타입과 메서드의 매개변수의 이름을 오버로딩에 영향을 미치지 않음
+	void overloadMethod() {
+		
+	}
+	
+	void overloadMethod(int arg) {
+		
+	}
+	
+	void overloadMethod(double arg) {
+		
+	}
+	
+	void overloadMethod(int arg1, double arg2) {
+		
+	}
+	
+//	void overloadMethod(double arg1, int arg2) {
+//		
+//	} // 타입의 순서만 달라도 오버로드 가능
+//	
+//	int overloadMethod(double arg1, int arg2) {
+//		return 0;
+//	}
+	
+	// void overloadMethod (double double1, int int1) {
+		
+	// } // 매개변수랑 이름이 같으면 오버로드 x
+	
+	// 생성자도 메서드의 일종이기 때문에 오버로딩이 가능
+	ExampleClass1() {
+		this.attribute1 = 99;
+		this.attribute2 = -99.99;
+	}
+	
+	ExampleClass1 (int attribute1) {
+		this(attribute1, -99.99); //생성자
+//		this.attribute1 = attribute1;
+//		this.attribute2 = -99.99;
+	}
 }
 
 // 축구선수	(FootballPlayer)
@@ -270,6 +314,18 @@ public class A_ClassAndObject {
 		System.out.println(instance4.attribute2);
 //		instance4.attribute1 = 999;
 //		instance4.attribute2 = 99.99;
+		
+		System.out.println("");
+		
+		ExampleClass1 instance5 = new ExampleClass1();
+		System.out.println(instance5.attribute1);
+		System.out.println(instance5.attribute2);
+		ExampleClass1 instance6 = new ExampleClass1(100);
+		System.out.println(instance6.attribute1);
+		System.out.println(instance6.attribute2);
+		
 	}
 
 }
+
+// 생성자 만드는 건 이미 인스턴스 만드는 거

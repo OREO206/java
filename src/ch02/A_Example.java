@@ -102,26 +102,37 @@ class Drama {
 // cos 구하기 - getCos
 // tan 구하기 - getTan
 
-class TriangleMath {
+class TriangleMath {                                     
 	
-	double getHypotenuse(int bottom, int height) {
+	// 상순데 스테틱이 됨 
+	// static final double PI = 3.14;
+	
+	static double getHypotenuse(int bottom, int height) {
+		if(bottom <= 0 || height <= 0) return 0;
+		// if(!(bottom >=0 && height > 0));
+		
 		double result = Math.pow(bottom, 2) + Math.pow(height, 2);
+		if(bottom <= 0 || height <= 0) return 0;
 		return Math.sqrt(result);
 	}
 	
-	double getCircumference(int height, int bottom, int hypotenuse) {
+	static double getCircumference(int height, int bottom, int hypotenuse) {
+		if(bottom <= 0 || height <= 0 || hypotenuse <= 0) return 0;
 		return height + bottom + hypotenuse;
 	}
 	
-	double getSin(int height, int hypotenuse) {
+	static double getSin(int height, int hypotenuse) {
+		if(height <= 0 || hypotenuse <= 0) return 0;
 		return height / hypotenuse;
 	}
 	
-	double getCos(int bottom, int hypotenuse) {
+	static double getCos(int bottom, int hypotenuse) {
+		if(bottom <= 0 || hypotenuse <= 0) return 0;
 		return bottom / hypotenuse;
 	}
 	
-	double getTan(int height, int bottom) {
+	static double getTan(int height, int bottom) {
+		if(bottom <= 0 || height <= 0) return 0;
 		return height / bottom;
 	}
 }
@@ -171,5 +182,8 @@ public class A_Example {
 		TriangleMath triangleMath = new TriangleMath();
 		double bit = triangleMath.getHypotenuse(3, 4);
 		System.out.println(bit);
+		
+		// System.out.println(TriangleMath.PI);
+		// TriangleMath.PI = 0.0;
 	}
 }
